@@ -5,6 +5,9 @@ import com.google.gson.Gson
 import retrofit2.Response
 
 abstract class BaseDataSource {
+    /**
+     * SafeApiCall is used to safely calling api and signing api call status in Resource class
+     */
     suspend fun <T> safeApiCall(apiCall: suspend () -> Response<T>): Resource<T> {
 
         try {

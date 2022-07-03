@@ -12,6 +12,10 @@ import com.example.githubusers.databinding.LoadStateFooterBinding
 class LoadStateFooterAdapter(private val retry: () -> Unit) :
     LoadStateAdapter<LoadStateFooterAdapter.LoadStateViewHolder>() {
 
+    /**
+     * This class is meant to be custom footer in paged list to handle connection or api call error
+     */
+
     override fun onCreateViewHolder(parent: ViewGroup, loadState: LoadState): LoadStateViewHolder {
         val binding =
             LoadStateFooterBinding.inflate(LayoutInflater.from(parent.context), parent, false)

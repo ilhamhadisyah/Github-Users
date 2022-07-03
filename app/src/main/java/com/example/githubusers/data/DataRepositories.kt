@@ -43,8 +43,11 @@ class DataRepositories @Inject constructor(
 
     suspend fun getDetailUser(login: String): Resource<UserDetailResponse> {
 
+        /**
+         * Manual source mediator for checking whether the data is exist on database or not
+         */
         return try {
-            val data=  userDao.getUserDetail(login)
+            val data = userDao.getUserDetail(login)
             data.login
             Resource.success(data)
 
@@ -64,7 +67,7 @@ class DataRepositories @Inject constructor(
         return userDao.updateUser(userDetail)
     }
 
-    suspend fun updateNoteStatus(userId : Int, hasNotes : Boolean){
-        return userDao.changeNoteStatus(userId,hasNotes)
+    suspend fun updateNoteStatus(userId: Int, hasNotes: Boolean) {
+        return userDao.changeNoteStatus(userId, hasNotes)
     }
 }

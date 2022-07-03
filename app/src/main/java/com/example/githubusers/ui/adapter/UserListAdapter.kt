@@ -24,6 +24,9 @@ class UserListAdapter(private val onClickListener: OnItemClickListener) :
 
         fun bind(user: UserResponseItem) {
             if (user.isRead!!){
+                /**
+                 * Overlay is used to give status on user watched the user
+                 */
                 binding.layerOverlay.visibility = View.VISIBLE
             }else{
                 binding.layerOverlay.visibility = View.GONE
